@@ -103,6 +103,8 @@ class Cord:
 
     delivery_norm = (492, 296)
 
+    
+
 def clear_tables():
     print ("Clearing Tables.")
     mousePos((90, 207))
@@ -127,4 +129,69 @@ def clear_tables():
     print ("Tables Cleared.")
 
 
+'''
+Recipes:
+ 
+    onigiri
+        2 rice, 1 nori
+     
+    caliroll:
+        1 rice, 1 nori, 1 roe
+         
+    gunkan:
+        1 rice, 1 nori, 2 roe
+'''
 
+def makeFood(food):
+    if food == 'caliroll':
+        print 'Making a CaliRoll'
+        mousePos(Cord.f_rice)
+        leftClick()
+        time.sleep(.05)
+        mousePos(Cord.f_nori)
+        leftClick()
+        time.sleep(.05)
+        mousePos(Cord.f_roe)
+        leftClick()
+        time.sleep(.05)
+        foldMat()
+        time.sleep(1.5)
+
+    elif food == 'onigiri':
+        print 'Making a OniGiri'
+        mousePos(Cord.f_rice)
+        leftClick()
+        time.sleep(.05)
+        mousePos(Cord.f_rice)
+        leftClick()
+        time.sleep(.05)
+        mousePos(Cord.f_nori)
+        leftClick()
+        time.sleep(.05)
+        foldMat()
+        time.sleep(1.5)
+
+    elif food == 'gunkan':
+        print 'Making a Gunkan Maki'
+        mousePos(Cord.f_rice)
+        leftClick()
+        time.sleep(.05)
+        mousePos(Cord.f_nori)
+        leftClick()
+        time.sleep(.05)
+        mousePos(Cord.f_roe)
+        leftClick()
+        time.sleep(.05)
+        mousePos(Cord.f_roe)
+        leftClick()
+        time.sleep(.1)
+        foldMat()
+        time.sleep(1.5)
+
+def foldMat():
+    mousePos((Cord.f_rice[0]+40,Cord.f_rice[1]))
+    leftClick()
+    time.sleep(.1)
+
+
+        
